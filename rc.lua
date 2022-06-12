@@ -331,10 +331,6 @@ awful.screen.connect_for_each_screen(function(s)
 
             keyboard_layout,
 
-            -- volume widget
-            -- volume_widget{
-                -- widget_type = 'arc'
-            -- },
             volume({}),
             
             seperator,
@@ -862,5 +858,3 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("xcompmgr")
 -- wifi nm-applet
 awful.util.spawn_with_shell("nm-applet &")
--- bluetooth widget
-awful.spawn.with_shell("blueberry-tray")
