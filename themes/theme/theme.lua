@@ -1,12 +1,12 @@
-local theme_assets = require("beautiful.theme_assets")
-local xresources = require("beautiful.xresources")
-local dpi = xresources.apply_dpi
+local theme_assets                              = require("beautiful.theme_assets")
+local xresources                                = require("beautiful.xresources")
+local dpi                                       = xresources.apply_dpi
 
-local gfs = require("gears.filesystem")
-local themes_path = gfs.get_themes_dir()
+local gfs                                       = require("gears.filesystem")
+local themes_path                               = gfs.get_themes_dir()
 
-local theme = {}
-theme.font          = "sans 9"
+local theme                                     = {}
+theme.font                                      = "sans 9"
 
 -- color scheme
 -- normal colors
@@ -34,39 +34,33 @@ theme.color_bright_orange                       = "#ff8c00"
 
 theme.menu_bg_normal                            = theme.color_black
 theme.menu_bg_focus                             = theme.color_black
-theme.bg_normal                                 = theme.color_black
-theme.bg_focus                                  = theme.color_black
-theme.bg_urgent                                 = theme.color_bright_red
-
-theme.bg_minimize   = theme.color_bright_black
-theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal                                 = theme.color_white
-theme.fg_focus                                  = theme.color_orange
+theme.bg_normal                                 = theme.color_black
+
+theme.fg_focus                                  = theme.color_bright_white
+theme.bg_focus                                  = theme.color_bright_orange
+
+theme.bg_systray                                = theme.bg_normal
+
 theme.fg_urgent                                 = theme.color_red
-theme.fg_minimize                               = theme.color_bright_white
+theme.bg_urgent                                 = theme.color_bright_red
+
+theme.fg_minimize                               = theme.color_bright_orange
+theme.bg_minimize                               = theme.bg_normal
 
 theme.border_normal                             = theme.color_bright_black
 theme.border_focus                              = theme.color_orange
-theme.border_marked                             = theme.color_bright_blue
-
+theme.border_marked                             = theme.color_bright_black
 
 theme.menu_fg_normal                            = theme.color_white
-theme.menu_fg_focus                             = theme.color_orange
 theme.menu_bg_normal                            = theme.color_bright_black
-theme.menu_bg_focus                             = theme.color_bright_black
 
--- theme.useless_gap   = dpi(0)
--- theme.border_width  = dpi(1)
+theme.menu_fg_focus                             = theme.color_orange
+theme.menu_bg_focus                             = theme.color_bright_black
 
 theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(1.5)
--- theme.border_width  = dpi(3.5)
--- theme.border_width  = dpi(3)
-
--- theme.border_normal = "#000000"
--- theme.border_focus  = "#535d6c"
--- theme.border_marked = "#91231c"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -79,15 +73,13 @@ theme.border_width  = dpi(1.5)
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
---theme.taglist_bg_focus = "#ff0000"
+-- theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
 -- used tag
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    -- taglist_square_size, theme.fg_normal
-    -- taglist_square_size, theme.color_orange
-    taglist_square_size, theme.color_bright_blue
+    taglist_square_size, theme.fg_normal
 )
 -- unsed tags
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
@@ -106,11 +98,6 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
-
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
