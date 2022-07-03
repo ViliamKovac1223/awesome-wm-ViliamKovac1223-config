@@ -17,7 +17,7 @@ pcall(require, "luarocks.loader")
 -- super key = Mod4
 -- key alt = Mod1
 -----------------------------------------------------------------------------------------
-local menubar_icon = os.getenv("HOME").. "/Desktop/graphic/2D/vector/gravit/save/final/SorigNewLogoNoBackGround.svg"
+local menubar_icon = os.getenv("HOME").. "/.config/awesome/themes/theme/logo.svg"
 
 local cyclefocus = require('cyclefocus')
 
